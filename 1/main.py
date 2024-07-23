@@ -124,7 +124,7 @@ async def clean_urls_data(urls_data):
 async def main():
     twitch_urls = get_data_urls()
     concurrent_request_limit = 5  # Количество одновременных запросов (не для слабых пк)
-    urls_data = await get_urls_data(twitch_urls[1:40], concurrent_request_limit)
+    urls_data = await get_urls_data(twitch_urls[1:], concurrent_request_limit)
     urls_content = await clean_urls_data(urls_data)
     await save_data(urls_content)
 
